@@ -10,10 +10,16 @@ class Stack(object):
         return self.items.append(inItem)
 
     def pop(self):
-        return self.items.pop()     #self.items[len(self.items)-1]
-
+        try:
+            return self.items.pop()     #self.items[len(self.items)-1]
+        except:
+            print('Stack is Empty')
+            
     def peek(self):
-        return self.items[len(self.items)-1]
+        try:
+            return self.items[len(self.items)-1]
+        except:
+            return 'Stack is Empty'
 
     def size(self):
         return len(self.items)
@@ -24,4 +30,4 @@ s.push(1)
 s.push(2)
 s.push(3)
 s.pop()
-print s.peek()
+print(s.peek())
